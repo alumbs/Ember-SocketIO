@@ -1,6 +1,6 @@
 App = Ember.Application.create();
 
-App.ApplicationController = Ember.Controller.extend({
+App.IndexController = Ember.Controller.extend({
 	model: [
 		{name: 'Galaxy s5', cost: 599.99},
 		{name: 'Nexus 5', cost: 69.99},
@@ -14,4 +14,14 @@ App.ApplicationController = Ember.Controller.extend({
 
 		return total;
 	}.property('model')
+});
+
+App.Router.map(function(){
+	this.resource('about');
+});
+
+App.AboutController = Ember.Controller.extend({
+	setup: function(){
+		console.log('I am here');
+	}
 });

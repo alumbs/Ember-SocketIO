@@ -7,6 +7,18 @@
 </head>
 <body>
   <script type="text/x-handlebars">
+  <p>Navbar: {{#link-to 'index'}}Index{{/link-to}} 
+  {{#link-to 'about'}}About{{/link-to}}</p>
+    
+    {{outlet}}
+  </script>
+
+  <script type="text/x-handlebars" id="about">
+    <p>I am talking about the life of Chibuzor.<br/>
+    He is smart and hopefully it will lead to millions </p>
+  </script>
+
+  <script type="text/x-handlebars" id="index">
     <p>The phones we have are listed below </p>
     <br/>
       {{#each model}}
@@ -20,7 +32,9 @@
     <p>The total cost is {{totalCost}} </p>
 
     <p>Update the cost of phones to see the totalCost update </p>
-    <p>{{model.[1].name}} <t/> {{input type="number" value=model.[1].cost}}</p>
+    <p>
+    {{model.[1].name}} <t/> {{input type="number" value=model.[1].cost}}
+    </p>
   </script>
 
   <script src="js/libs/jquery-1.10.2.js"></script>
