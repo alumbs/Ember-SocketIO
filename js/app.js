@@ -1,13 +1,17 @@
 App = Ember.Application.create();
 
 App.ApplicationController = Ember.Controller.extend({
-	name: '',
-	shout: function() {
-		return 'Hello ' + this.get('name').toUpperCase() + '!';
-	}.property('name'),
+	model: [
+		{name: 'Galaxy s5', cost: 599.99},
+		{name: 'Nexus 5', cost: 69.99},
+		{name: 'iPhone 5s', cost: 399.99}
+	],
+	totalCost: function() {
+		var total = 0;
+		this.get('model').forEach(function(phone){
+			total += phone['cost'];
+		});
 
-	whisper: function(){
-
-		return 'heyyyy ' + this.get('name').toLowerCase() + '...';
-	}.property('name')
+		return total;
+	}.property('phones')
 });
