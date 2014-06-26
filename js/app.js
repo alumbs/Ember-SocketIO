@@ -13,5 +13,5 @@ App.ApplicationController = Ember.Controller.extend({
 		});
 
 		return total;
-	}.property('phones')
+	}.property('model')
 });

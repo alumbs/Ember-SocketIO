@@ -7,7 +7,20 @@
 </head>
 <body>
   <script type="text/x-handlebars">
+    <p>The phones we have are listed below </p>
+    <br/>
+      {{#each model}}
+        <p>
+        name: {{name}}
+        <br/>
+        cost: {{cost}}
+        </p>
+      {{/each}}
+    
     <p>The total cost is {{totalCost}} </p>
+
+    <p>Update the cost of phones to see the totalCost update </p>
+    <p>{{model.[1].name}} <t/> {{input type="number" value=model.[1].cost}}</p>
   </script>
 
   <script src="js/libs/jquery-1.10.2.js"></script>
