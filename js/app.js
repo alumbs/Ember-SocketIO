@@ -1,4 +1,4 @@
-App = Ember.Application.create();
+App = Ember.Application.create({LOG_TRANSITIONS: true});
 
 App.IndexController = Ember.Controller.extend({
 	model: [
@@ -21,7 +21,7 @@ App.Router.map(function(){
 });
 
 App.AboutController = Ember.Controller.extend({
-	setup: function(){
+	setupController: function(){
 		console.log('I am here');
 	}
 });
