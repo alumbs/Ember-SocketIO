@@ -12,8 +12,23 @@ App.IndexController = Ember.Controller.extend({
 			total += phone['cost'];
 		});
 
+        //this.setupController();
 		return total;
-	}.property('model')
+	}.property('model'),
+    init: function() {
+        console.log('setup controller called');
+        var socket = io('http://localhost:8080');
+
+        socket.on('news', function (data) {
+            console.log(data);
+            alert('News received: ' + data['news']);
+        });
+
+        socket.on('allClients', function (data) {
+            console.log(data);
+            alert('News received: ' + data['news']);
+        });
+    }
 });
 
 App.Router.map(function(){
